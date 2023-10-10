@@ -19,5 +19,5 @@ setup(
     version='0.0.1',
     author='Bonny'
     packages=find_packages(),
-    install_requires=get_requirememts()
+    install_requires=get_requirememts('requirements.txt')
 )
