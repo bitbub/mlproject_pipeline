@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 HYPEN_E_DOT = '-e .'
 
-def get_requirements(file_path:srt) -> List(str):
+def get_requirements(file_path:str):
 
     with open(file_path, 'r') as file_obj:
         packages = file_obj.readlines()
