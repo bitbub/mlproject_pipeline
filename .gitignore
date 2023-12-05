@@ -121,6 +121,7 @@ celerybeat.pid
 
 # Environments
 artifacts
+data_source
 .env
 .venv
 env/

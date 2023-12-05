@@ -12,9 +12,9 @@ from src.logger import logging
 @dataclass
 class DataIngestionConfig:
 
-    raw_data_path:str = os.path.join('artifacts', 'data.csv')
-    train_data_path:str = os.path.join('artifacts', 'train.csv')
-    test_data_path:str = os.path.join('artifacts', 'test.csv')
+    raw_data_path:str = os.path.join('data_source', 'raw_data.csv')
+    train_data_path:str = os.path.join('data_source', 'train.csv')
+    test_data_path:str = os.path.join('data_source', 'test.csv')
 
 
 class DataIngestion:
@@ -39,11 +39,11 @@ class DataIngestion:
             logging.info('train test split initiated')
             
             ## split data into train and test sets.
-            train_set, test_set = train_test_split(df, test_size=0.2, random_state=42)
+            train, test = train_test_split(df, test_size=0.2, random_state=42)
 
             ## export train and test datasets.
-            train_set.to_csv(self.ingestion_config.train_data_path, index=False, header=True)
-            test_set.to_csv(self.ingestion_config.test_data_path, index=False, header=True)
+            train.to_csv(self.ingestion_config.train_data_path, index=False, header=True)
+            test.to_csv(self.ingestion_config.test_data_path, index=False, header=True)
 
             logging.info('Data ingestion is completed')
 
