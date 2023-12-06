@@ -170,3 +170,6 @@ log/
 
 #Files
 .pkl
+
+#Folders
+catboost_info/
